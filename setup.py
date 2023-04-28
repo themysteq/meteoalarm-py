@@ -5,14 +5,15 @@ from setuptools import find_packages, setup
 VERSION = "0.1.dev0"
 
 install_requires = [
-    #     "setuptools",
+         "requests >= 2.29.0",
 ]
-tests_require = []
+tests_require = [] + install_requires
 
 dev_extras = tests_require + [
     "pytest",
     "pytest-cov",
     "pytest-vcr",
+    "pytest-datafiles",
     "pylint",
     "black",
     "flake8",

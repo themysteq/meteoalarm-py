@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2">
+  <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+  <link href="https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-poland" rel="self" type="application/atom+xml"/>
+  <link href="https://meteoalarm.org" rel="alternate" type="text/html"/>
+  <rights>Copyright (c) 2023, meteoalarm.org</rights>
+  <generator>Meteoalarm Producer Server</generator>
+  <logo>https://feeds.meteoalarm.org/images/logo.svg</logo>
+  <author>
+    <name>meteoalarm.org</name>
+    <uri>https://meteoalarm.org</uri>
+    <email>meteoalarm@zamg.ac.at</email>
+  </author>
+  <id>tag:meteoalarm.org,2021-02-19:PL</id>
+  <title>Meteoalarm - severe weather warnings for Europe</title>
+  <updated>2023-04-28T12:40:46.062249Z</updated>
+  <entry>
+    <cap:geocode>
+      <valueName>EMMA_ID</valueName>
+      <value>PL805</value>
+    </cap:geocode>
+    <link href="https://meteoalarm.org?geocode=EMMA_ID:PL805" hreflang="en" title="Eastern coastal zone"/>
+    <cap:areaDesc>Eastern coastal zone</cap:areaDesc>
+    <cap:event>Yellow Wind warning</cap:event>
+    <cap:sent>2023-04-27T12:22:01+00:00</cap:sent>
+    <cap:expires>2023-04-27T20:00:00+00:00</cap:expires>
+    <cap:effective>2023-04-27T12:21:00+00:00</cap:effective>
+    <cap:onset>2023-04-27T12:30:00+00:00</cap:onset>
+    <cap:certainty>Likely</cap:certainty>
+    <cap:severity>Moderate</cap:severity>
+    <cap:urgency>Expected</cap:urgency>
+    <cap:scope>Public</cap:scope>
+    <cap:message_type>Alert</cap:message_type>
+    <cap:status>Actual</cap:status>
+    <cap:identifier>2.49.0.0.616.0.PL.230427122201.PL805_00731</cap:identifier>
+    <link href="https://feeds.meteoalarm.org/api/v1/warnings/feeds-poland/3adfb5e8-78f3-4240-bc8e-4b6a4da41c3b" type="application/cap+xml"/>
+    <link href="https://meteoalarm.org?region=PL" hreflang="en" rel="related" title="Poland"/>
+    <author>
+      <name>meteoalarm.org</name>
+      <uri>https://meteoalarm.org</uri>
+    </author>
+    <published>2023-04-27T12:22:01Z</published>
+    <id>https://feeds.meteoalarm.org/api/v1/warnings/feeds-poland/3adfb5e8-78f3-4240-bc8e-4b6a4da41c3b?index_info=1&amp;index_area=0&amp;index_geocode=0</id>
+    <title>Yellow Wind Warning issued for Poland - Eastern coastal zone</title>
+    <updated>2023-04-27T12:22:01Z</updated>
+  </entry>
+  <entry>
+    <cap:geocode>
+      <valueName>EMMA_ID</valueName>
+      <value>PL804</value>
+    </cap:geocode>
+    <link href="https://meteoalarm.org?geocode=EMMA_ID:PL804" hreflang="en" title="Central coastal zone"/>
+    <cap:areaDesc>Central coastal zone</cap:areaDesc>
+    <cap:event>Yellow Wind warning</cap:event>
+    <cap:sent>2023-04-27T07:31:34+00:00</cap:sent>
+    <cap:expires>2023-04-27T20:00:00+00:00</cap:expires>
+    <cap:effective>2023-04-27T07:31:00+00:00</cap:effective>
+    <cap:onset>2023-04-27T13:00:00+00:00</cap:onset>
+    <cap:certainty>Likely</cap:certainty>
+    <cap:severity>Moderate</cap:severity>
+    <cap:urgency>Expected</cap:urgency>
+    <cap:scope>Public</cap:scope>
+    <cap:message_type>Alert</cap:message_type>
+    <cap:status>Actual</cap:status>
+    <cap:identifier>2.49.0.0.616.0.PL.230427073134.PL804_00821</cap:identifier>
+    <link href="https://feeds.meteoalarm.org/api/v1/warnings/feeds-poland/3a815d72-c066-4fbd-a114-0d325682a12b" type="application/cap+xml"/>
+    <link href="https://meteoalarm.org?region=PL" hreflang="en" rel="related" title="Poland"/>
+    <author>
+      <name>meteoalarm.org</name>
+      <uri>https://meteoalarm.org</uri>
+    </author>
+    <published>2023-04-27T07:31:34Z</published>
+    <id>https://feeds.meteoalarm.org/api/v1/warnings/feeds-poland/3a815d72-c066-4fbd-a114-0d325682a12b?index_info=1&amp;index_area=0&amp;index_geocode=0</id>
+    <title>Yellow Wind Warning issued for Poland - Central coastal zone</title>
+    <updated>2023-04-27T07:31:34Z</updated>
+  </entry>
+</feed>
