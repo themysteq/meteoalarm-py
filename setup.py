@@ -5,9 +5,9 @@ from setuptools import find_packages, setup
 VERSION = "0.1.dev0"
 
 install_requires = [
-         "requests >= 2.29.0",
+    "requests >= 2.29.0",
 ]
-tests_require = [] + install_requires
+tests_require = []
 
 dev_extras = tests_require + [
     "pytest",
@@ -31,6 +31,7 @@ setup(
     extras_require={"dev": dev_extras},
     tests_require=tests_require,
     packages=find_packages("src", exclude=["tests"]),
+    install_requires=install_requires,
     package_dir={"": "src"},
     python_requires=">=3.7",
     url="https://github.com/themysteq/meteoalarm-py",
