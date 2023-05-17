@@ -6,6 +6,7 @@ VERSION = "0.1.dev0"
 
 install_requires = [
     "requests >= 2.29.0",
+    "urllib3 < 2.0",
 ]
 tests_require = []
 
@@ -20,8 +21,7 @@ dev_extras = tests_require + [
     "isort",
     "check-manifest",
     "docutils",
-    #        "pip-tools"
-    "pytest-vcr",
+    "urllib3<2.0",
 ]
 
 
