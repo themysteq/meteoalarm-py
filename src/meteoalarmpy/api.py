@@ -9,13 +9,13 @@ class MeteoAlarm:
             "cap": "urn:oasis:names:tc:emergency:cap:1.2",
         }
 
-    def get_entries(self, country_name: str):
+    def get_raw_entries(self, country_name: str):
         feed = self.fetcher.get_xml(country_name=country_name)
         entries = feed.findall("atom:entry", self.xml_namespace)
         return entries
 
-    def get_parsed_entries(self, country_name: str):
-        entries = self.get_entries(country_name)
+    def get_entries(self, country_name: str):
+        entries = self.get_raw_entries(country_name)
         parsed_entries = list()
         for entry in entries:
             p_entry = {
