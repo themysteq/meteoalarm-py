@@ -1,5 +1,7 @@
 from dataclasses import dataclass
-from typing import Literal, Optional, Tuple
+from typing import Optional, Tuple
+
+from cap_types import CATEGORY, CERTAINTY, RESPONSE_TYPE, SEVERITY, URGENCY
 
 
 @dataclass
@@ -8,37 +10,12 @@ class CAPInfo:
     Based on https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.xsd"""
 
     language: Optional[str]
-    category: Literal[
-        "Geo",
-        "Met",
-        "Safety",
-        "Security",
-        "Rescue",
-        "Fire",
-        "Health",
-        "Env",
-        "Transport",
-        "Infra",
-        "CBRNE",
-        "Other",
-    ]
+    category: CATEGORY
     event: str
-    responseType: Optional[
-        Literal[
-            "Shelter",
-            "Evacuate",
-            "Prepare",
-            "Execute",
-            "Avoid",
-            "Monitor",
-            "Assess",
-            "AllClear",
-            "None",
-        ]
-    ]
-    urgency: Literal["Immediate", "Expected", "Future", "Past", "Unknown"]
-    severity: Literal["Extreme", "Severe", "Moderate", "Minor", "Unknown"]
-    certainty: Literal["Observed", "Likely", "Possible", "Unlikely", "Unknown"]
+    responseType: Optional[RESPONSE_TYPE]
+    urgency: URGENCY
+    severity: SEVERITY
+    certainty: CERTAINTY
     audience: Optional[str]
     # FIXME: 'eventCode' does not conform yet
     # TODO: NamedTuple?

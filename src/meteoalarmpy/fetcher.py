@@ -7,6 +7,10 @@ class Fetcher:
     URL_ATOM_XML_TEMPLATE = (
         "https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-{0}"
     )
+    NAMESPACES = {
+        "atom": "http://www.w3.org/2005/Atom",
+        "cap": "urn:oasis:names:tc:emergency:cap:1.2",
+    }
 
     def __init__(self):
         self._session = Session()
@@ -20,5 +24,7 @@ class Fetcher:
 
     def get_xml(self, country_name: str) -> ET.Element:
         r_xml = self._get_raw_xml(country_name=country_name)
+        for k, v in self.NAMESPACES.items():
+            ET.register_namespace(k, v)
         xml_root = ET.fromstring(r_xml)
         return xml_root

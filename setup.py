@@ -7,6 +7,7 @@ VERSION = "0.1.dev0"
 install_requires = [
     "requests >= 2.29.0",
     "urllib3 < 2.0",
+    "pydantic >= 1.10.8",
 ]
 tests_require = []
 
