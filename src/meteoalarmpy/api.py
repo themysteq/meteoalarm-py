@@ -24,7 +24,7 @@ class MeteoAlarm:
         # handle geocode separately
         geocode_element = entry.find("./cap:geocode", namespaces=self.xml_namespace)
         entry_fields["cap__geocode"] = {
-            f"{geocode_element.findtext('./atom:valueName', namespaces=self.xml_namespace)}": f"{geocode_element.findtext('./atom:value', namespaces=self.xml_namespace)}"
+            f"{geocode_element.findtext('./atom:valueName', namespaces=self.xml_namespace)}": f"{geocode_element.findtext('./atom:value', namespaces=self.xml_namespace)}"  # noqa:E501
         }
         model_fields.remove("cap__geocode")
 

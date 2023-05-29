@@ -1,4 +1,5 @@
 import datetime
+import json
 
 from pydantic import BaseModel
 
@@ -35,3 +36,11 @@ class MeteoalarmEntry(BaseModel):
     atom__id: str
     atom__title: str
     atom__updated: str
+
+
+class JSONCapEncoder(json.JSONEncoder):
+    pass
+
+
+class JSONCapDecoder(json.JSONDecoder):
+    pass

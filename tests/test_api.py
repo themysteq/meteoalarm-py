@@ -21,6 +21,22 @@ def test_meteoalarm(mock_fetcher):
 
 
 @pytest.mark.datafiles(FIXTURE_DIR)
+def test_meteoalarm_entries_germany(mock_fetcher):
+    m = MeteoAlarm()
+    entries = m.get_entries("germany")
+    assert entries is not None
+    assert len(entries) == 381
+
+
+@pytest.mark.datafiles(FIXTURE_DIR)
+def test_meteoalarm_entries_germany_json_serializable(mock_fetcher):
+    m = MeteoAlarm()
+    entries = m.get_entries("germany")
+    assert entries is not None
+    assert len(entries) == 381
+
+
+@pytest.mark.datafiles(FIXTURE_DIR)
 def test_entries_poland(mock_fetcher):
     country_name = "poland"
     m = MeteoAlarm()
