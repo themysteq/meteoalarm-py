@@ -37,6 +37,14 @@ class MeteoalarmEntry(BaseModel):
     atom__title: str
     atom__updated: str
 
+    class Config:
+        @classmethod
+        def alias_generator(cls, string: str) -> str:
+            # strip "cap__" and "atom__"
+            return string.split("__", 1)[1]
+
+        allow_population_by_field_name = True
+
 
 class JSONCapEncoder(json.JSONEncoder):
     pass

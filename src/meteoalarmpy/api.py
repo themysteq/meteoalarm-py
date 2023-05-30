@@ -50,3 +50,8 @@ class MeteoAlarm:
             meteo_entry = self._extract_entry(xml_entry)
             parsed_entries.append(meteo_entry)
         return parsed_entries
+
+    def get_alerts(self, country_name: str) -> List[MeteoalarmEntry]:
+        """Get all meteoalarm.org alerts for given :country_name"""
+        entries_dict = [entry.dict(by_alias=True) for entry in self.get_entries(country_name)]
+        return entries_dict
