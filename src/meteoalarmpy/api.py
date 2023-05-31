@@ -53,5 +53,7 @@ class MeteoAlarm:
 
     def get_alerts(self, country_name: str) -> List[MeteoalarmEntry]:
         """Get all meteoalarm.org alerts for given :country_name"""
-        entries_dict = [entry.dict(by_alias=True) for entry in self.get_entries(country_name)]
+        entries_dict = [
+            entry.dict(by_alias=True) for entry in self.get_entries(country_name)
+        ]
         return entries_dict
