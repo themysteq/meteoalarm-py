@@ -1,6 +1,6 @@
 import logging
 import xml.etree.ElementTree
-from typing import List
+from typing import Dict, List
 
 from .fetcher import Fetcher
 from .models.meteoalarmentry import MeteoalarmEntry
@@ -51,9 +51,15 @@ class MeteoAlarm:
             parsed_entries.append(meteo_entry)
         return parsed_entries
 
-    def get_alerts(self, country_name: str) -> List[MeteoalarmEntry]:
-        """Get all meteoalarm.org alerts for given :country_name"""
-        entries_dict = [
-            entry.dict(by_alias=True) for entry in self.get_entries(country_name)
+    def get_alerts(self, country_name: str, province_name: str) -> List[Dict]:
+        """Get all meteoalarm.org alerts for given :country_name and :province_name"""
+        entries = self.get_entries(country_name)  # type:List[MeteoalarmEntry]
+        # the emma_id will be better, but we don't have any source implemented yet
+        # meteoalarm.org provides list of geocodes, but it's heavy (tens of megabytes uncompressed)
+        province_entries = [
+            entry
+            for entry in entries
+            if str(entry.cap__areaDesc).lower() == province_name.lower()
         ]
+        entries_dict = [entry.dict(by_alias=True) for entry in province_entries]
         return entries_dict

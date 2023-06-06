@@ -63,6 +63,16 @@ def test_entries_poland_eastern_coastal_zone_meteo(mock_fetcher):
     assert eastern_coastal_zone_entry.cap__onset.date() == datetime.date(2023, 4, 27)
 
 
+@pytest.mark.datafiles(FIXTURE_DIR)
+def test_meteoalarm_alerts_germany_ha_compat(mock_fetcher):
+    country_name = "germany"
+    province_name = "stadt Koblenz"
+    m = MeteoAlarm()
+    alerts = m.get_alerts(country_name, province_name)
+    assert alerts is not None
+    assert len(alerts) == 2
+
+
 # vcr-py based
 
 
